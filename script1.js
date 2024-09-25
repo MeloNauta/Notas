@@ -3,9 +3,8 @@ const materiasRegulares = [
     'Biologia', 'Física', 'Química', 'Matemática', 'Filosofia', 'Geografia', 'História', 'Português Instrumental'
 ];
 
-const itinerario = ['Experimentação em Ciências', 'Expressão, Criação e Vivênicas', 'Lógica e Análise de Dados', 'Projeto de Vida','Sociedade Economia e Cultura'];
+const itinerario = ['Experimentação em Ciências', 'Expressão, Criação e Vivênicas', 'Lógica e Análise de Dados', 'Projeto de Vida', 'Sociedade Economia e Cultura'];
 
-// Função para criar campos de notas
 function criarCampoNota(materia, container) {
     const div = document.createElement('div');
     div.classList.add('materia');
@@ -19,7 +18,6 @@ function criarCampoNota(materia, container) {
     container.appendChild(div);
 }
 
-// Exibe as matérias regulares e do itinerário
 function mostrarMaterias() {
     const containerRegulares = document.getElementById('disciplinas-regulares');
     const containerItinerario = document.getElementById('disciplinas-itinerario');
@@ -31,7 +29,6 @@ function mostrarMaterias() {
     itinerario.forEach(materia => criarCampoNota(materia, containerItinerario));
 }
 
-// Calcula a nota mínima para passar
 function calcularNotas() {
     let resultado = '';
 
@@ -60,7 +57,6 @@ function calcularNotas() {
     document.getElementById('resultado').innerHTML = resultado || 'Por favor, insira as notas.';
 }
 
-// Salva as notas no localStorage
 function salvarNotas() {
     const notas = {};
 
@@ -72,9 +68,9 @@ function salvarNotas() {
     });
 
     localStorage.setItem('notas', JSON.stringify(notas));
+    alert('Notas salvas com sucesso!');
 }
 
-// Carrega as notas do localStorage
 function carregarNotas() {
     const notas = JSON.parse(localStorage.getItem('notas'));
 
@@ -85,8 +81,10 @@ function carregarNotas() {
                 document.getElementById(`${materia}-2`).value = notas[materia][1];
             }
         });
+        alert('Notas carregadas com sucesso!');
+    } else {
+        alert('Nenhuma nota salva encontrada.');
     }
 }
 
-// Inicializa as matérias ao carregar a página
 document.addEventListener('DOMContentLoaded', mostrarMaterias);

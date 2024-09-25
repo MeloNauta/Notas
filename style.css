@@ -19,10 +19,10 @@ body {
     max-width: 600px;
     color: #333;
     position: relative;
-    height: auto; /* Permitir que a altura se ajuste ao conteúdo */
-    max-height: 80vh; /* Limitar a altura do container */
+    height: auto; 
+    max-height: 80vh;
     overflow-y: auto;
-    margin: 20px 0; /* Espaçamento ao redor do container */
+    margin: 20px 0; 
 }
 
 .logo-container {
@@ -38,7 +38,7 @@ body {
 h1 {
     text-align: center;
     color: #0773b7;
-    margin-bottom: 30px; /* Ajuste este valor conforme necessário */
+    margin-bottom: 30px; 
 }
 
 h2 {
@@ -63,8 +63,8 @@ select {
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaçamento entre os botões */
-    margin-bottom: 20px; /* Espaço abaixo dos botões */
+    gap: 15px;
+    margin-bottom: 20px; 
 }
 
 button {
@@ -89,8 +89,8 @@ button:hover {
 }
 
 .materias-container {
-    max-height: 200px; /* Limitar a altura do container das matérias */
-    overflow-y: auto; /* Permitir rolagem se necessário */
+    max-height: 200px; 
+    overflow-y: auto; 
     margin-bottom: 20px;
     background-color: #f0f0f0;
     padding: 10px;
@@ -103,7 +103,7 @@ button:hover {
 }
 
 input[type="number"] {
-    padding: 10px; /* Aumente o padding para melhor toque */
+    padding: 10px; 
     width: calc(100% - 10px);
     border: 1px solid #0075ba;
     border-radius: 5px;
