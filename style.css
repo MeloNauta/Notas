@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0075ba;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 600px;
+    color: #333;
+    position: relative;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 80%;
+    height: auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0773b7;
+}
+
+label, select, input {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    color: #333;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #0075ba;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #075789;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0075ba;
+}
+
+#resultado {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.materias-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0075ba;
+}
+
+.materia {
+    margin: 5px 0;
+}
+
+input[type="number"] {
+    padding: 5px;
+    width: calc(100% - 10px);
+    border: 1px solid #0075ba;
+    border-radius: 5px;
+}
+
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+}
