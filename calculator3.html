@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+        </div>
+
+        <h1>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</h1>
+
+        <label for="itinerario">Escolha seu itinerário:</label>
+        <select id="itinerario" onchange="mostrarMaterias()">
+            <option value="">Selecione um itinerário</option>
+            <option value="itinerario1">Esporte, Saúde e Aventura</option>
+            <option value="itinerario2">Biologia Humana e Comparada</option>
+            <option value="itinerario3">Cinema e Produção Audiovisual</option>
+            <option value="itinerario4">Ciências Humanas e Socioculturais</option>
+            <option value="itinerario5">Matemática e Astronomia</option>
+            <option value="itinerario6">Tópicos Avançados em Ensino Médio</option>
+        </select>
+
+        <h2>Disciplinas Regulares</h2>
+        <div id="disciplinas-regulares" class="materias-container"></div>
+
+        <h2>Disciplinas do Itinerário</h2>
+        <div id="disciplinas-itinerario" class="materias-container"></div>
+
+        <div class="button-container"> <!-- Agrupando botões aqui -->
+            <button onclick="calcularNotas()">Calcular Nota Mínima</button>
+            <button onclick="salvarNotas()">Salvar Notas</button>
+            <button onclick="carregarNotas()">Carregar Notas</button>
+        </div>
+
+        <h2>Resultado</h2>
+        <div id="resultado"></div>
+    </div>
+
+    <div class="watermark">by Cauã Melo K2 2024</div>
+
+    <script src="script3.js"></script>
+</body>
+</html>

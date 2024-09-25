@@ -19,8 +19,10 @@ body {
     max-width: 600px;
     color: #333;
     position: relative;
-    height: 90vh;
+    height: auto; /* Permitir que a altura se ajuste ao conteúdo */
+    max-height: 80vh; /* Limitar a altura do container */
     overflow-y: auto;
+    margin: 20px 0; /* Espaçamento ao redor do container */
 }
 
 .logo-container {
@@ -29,11 +31,17 @@ body {
 }
 
 .logo {
-    max-width: 80%;
+    max-width: 70%;
     height: auto;
 }
 
-h1, h2 {
+h1 {
+    text-align: center;
+    color: #0773b7;
+    margin-bottom: 30px; /* Ajuste este valor conforme necessário */
+}
+
+h2 {
     text-align: center;
     color: #0773b7;
 }
@@ -52,15 +60,22 @@ select {
     background-color: #f0f0f0;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os botões */
+    margin-bottom: 20px; /* Espaço abaixo dos botões */
+}
+
 button {
-    margin-top: 10px;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
     background-color: #075789;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
@@ -74,8 +89,8 @@ button:hover {
 }
 
 .materias-container {
-    max-height: 200px;
-    overflow-y: auto;
+    max-height: 200px; /* Limitar a altura do container das matérias */
+    overflow-y: auto; /* Permitir rolagem se necessário */
     margin-bottom: 20px;
     background-color: #f0f0f0;
     padding: 10px;
@@ -88,7 +103,7 @@ button:hover {
 }
 
 input[type="number"] {
-    padding: 5px;
+    padding: 10px; /* Aumente o padding para melhor toque */
     width: calc(100% - 10px);
     border: 1px solid #0075ba;
     border-radius: 5px;
@@ -102,14 +117,4 @@ input[type="number"] {
     color: rgba(255, 255, 255, 0.5);
     z-index: 100;
     pointer-events: none;
-}
-
-.logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 400px;
-    height: auto;
 }

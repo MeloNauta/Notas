@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+        </div>
+
+        <h1>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</h1>
+
+        <h2>Disciplinas Regulares</h2>
+        <div id="disciplinas-regulares" class="materias-container"></div>
+
+        <h2>Itinerário: Construindo a Cidadania</h2>
+        <div id="disciplinas-itinerario" class="materias-container"></div>
+
+        <div class="button-container"> <!-- Adicionado aqui -->
+            <button onclick="calcularNotas()">Calcular Nota Mínima</button>
+            <button onclick="salvarNotas()">Salvar Notas</button>
+            <button onclick="carregarNotas()">Carregar Notas</button>
+        </div>
+
+        <h2>Resultado</h2>
+        <div id="resultado"></div>
+    </div>
+
+    <div class="watermark">by Cauã Melo K2 2024</div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
