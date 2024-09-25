@@ -1,6 +1,6 @@
 const materiasRegulares = [
     'Arte', 'Educação Física', 'Língua Inglesa', 'Língua Portuguesa', 'Literatura',
-    'Biologia', 'Física', 'Química', 'Matemática', 'Filosofia', 'Geografia', 'História'
+    'Biologia', 'Física', 'Química', 'Matemática', 'Filosofia', 'Geografia', 'História', 'Português Instrumental'
 ];
 
 const itinerario = ['Experimentação em Ciências', 'Expressão, Criação e Vivênicas', 'Lógica e Análise de Dados', 'Projeto de Vida','Sociedade Economia e Cultura'];
