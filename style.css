@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #0075ba;
+    background-color: #075789;
     margin: 0;
     padding: 0;
     display: flex;
@@ -70,7 +70,7 @@ select {
 button {
     padding: 15px;
     width: 100%;
-    background-color: #075789;
+    background-color: #0075ba;
     color: white;
     border: none;
     border-radius: 5px;
