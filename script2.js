@@ -19,8 +19,8 @@ function criarCampoNota(materia, container) {
 
     div.innerHTML = `
         <label>${materia}</label>
-        <input type="number" id="${materia}-1" placeholder="Nota 1" step="0.01" min="0" max="10">
-        <input type="number" id="${materia}-2" placeholder="Nota 2" step="0.01" min="0" max="10">
+        <input type="number" id="${materia}-1" placeholder="Nota 1° Trimestre" step="0.01" min="0" max="10">
+        <input type="number" id="${materia}-2" placeholder="Nota 2° Trimestre" step="0.01" min="0" max="10">
     `;
 
     container.appendChild(div);
