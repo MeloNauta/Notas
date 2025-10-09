@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+            <a href="https://www.ucs.br/site/cetec" target="_blank">
+                <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+            </a>
         </div>
 
-        <h1>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</h1>
+        <h1>Descubra a Nota Mínima do 3º Trimestre no CETEC</h1>
 
         <h2>Disciplinas Regulares</h2>
         <div id="disciplinas-regulares" class="materias-container"></div>
 
-        <h2>Construindo a Cidadania</h2>
+        <h2>Itinerário</h2>
         <div id="disciplinas-itinerario" class="materias-container"></div>
-
-        <h2>Bases de Gestão</h2>
-        <div id="disciplinas-itinerario1" class="materias-container"></div>
 
         <div class="button-container">
             <button onclick="calcularNotas()">Calcular Nota Mínima</button>
@@ -29,7 +29,7 @@
             <button onclick="carregarNotas()">Carregar Notas</button>
         </div>
 
-        <h2>Resultado</h2>
+        <h1 id="resultado-titulo" style="text-align:center; margin-top:20px; display:none;">Resultados:</h1>
         <div id="resultado"></div>
     </div>
 

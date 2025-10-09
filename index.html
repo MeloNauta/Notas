@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial - Calculadora de Notas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela Inicial - Calculadora de Notas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="logo-container">
-            <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
-        </div>
-
-        <h1>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</h1>
-        
-        <div class="button-container">
-            <button onclick="escolherAno(1)">1º Ano</button>
-            <button onclick="escolherAno(2)">2º Ano</button>
-            <button onclick="escolherAno(3)">3º Ano</button>
-        </div>
-
-        <div class="watermark">by Cauã Melo K2 2024</div>
+  <div class="container">
+    <div class="logo-container">
+        <a href="https://www.ucs.br/site/cetec" target="_blank">
+        <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+        </a>
     </div>
 
-    <script>
-        function escolherAno(ano) {
-            localStorage.setItem('anoSelecionado', ano);
+    <h1>Descubra a Nota Mínima do 3º Trimestre no CETEC</h1>
 
-            if (ano === 1) {
-                window.location.href = 'calculator1.html';
-            } else if (ano === 2) {
-                window.location.href = 'calculator2.html';
-            } else if (ano === 3) {
-                window.location.href = 'calculator3.html';
-            }
-        }
-    </script>
+    <div class="button-container">
+      <button onclick="escolherAno(1)">1º Ano</button>
+      <button onclick="escolherAno(2)">2º Ano</button>
+      <button onclick="escolherAno(3)">3º Ano</button>
+    </div>
+
+  </div>
+
+  <script>
+    function escolherAno(ano) {
+      localStorage.setItem('anoSelecionado', ano);
+
+      if (ano === 1) {
+        window.location.href = 'calculator1.html';
+      } else if (ano === 2) {
+        window.location.href = 'calculator2.html';
+      } else if (ano === 3) {
+        window.location.href = 'calculator3.html';
+      }
+    }
+  </script>
+  <div class="watermark">by Cauã Melo K3 2025</div>
 </body>
 </html>

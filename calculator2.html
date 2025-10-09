@@ -9,10 +9,12 @@
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+            <a href="https://www.ucs.br/site/cetec" target="_blank">
+                <img src="Imagens/CETEC-Logo.jpg" alt="Logo da Escola" class="logo">
+            </a>
         </div>
 
-        <h1>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</h1>
+        <h1>Descubra a Nota Mínima do 3º Trimestre no CETEC</h1>
 
         <label for="itinerario">Escolha seu itinerário:</label>
         <select id="itinerario" onchange="mostrarMaterias()">
@@ -37,7 +39,7 @@
             <button onclick="carregarNotas()">Carregar Notas</button>
         </div>
 
-        <h2>Resultado</h2>
+        <h1 id="resultado-titulo" style="text-align:center; margin-top:20px; display:none;">Resultados:</h1>
         <div id="resultado"></div>
     </div>
 

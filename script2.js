@@ -42,35 +42,68 @@ function mostrarMaterias() {
 }
 
 function calcularNotas() {
-    let resultado = '';
+    let resultadoHTML = '';
 
-    materiasRegulares.forEach(materia => {
-        const nota1 = parseFloat(document.getElementById(`${materia}-1`).value) || 0;
-        const nota2 = parseFloat(document.getElementById(`${materia}-2`).value) || 0;
+    const calcularNotaMinima = (nota1, nota2) => {
+        return (7 - 0.3 * (nota1 + nota2)) / 0.4;
+    };
 
-        const notaMinima = (7 - 0.3 * (nota1 + nota2)) / 0.4;
+    const criarTabela = (materias, titulo) => {
+        let tabela = `<h3>${titulo}</h3><table>
+                        <thead>
+                            <tr>
+                                <th>Matéria</th>
+                                <th>Nota 1</th>
+                                <th>Nota 2</th>
+                                <th>Nota Mínima</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
 
-        if (nota1 || nota2) {
-            resultado += `${materia}: Nota mínima para passar: ${notaMinima.toFixed(2)}<br>`;
-        }
-    });
-
-    const itinerario = document.getElementById('itinerario').value;
-    if (itinerario) {
-        itinerarios[itinerario].forEach(materia => {
+        materias.forEach(materia => {
             const nota1 = parseFloat(document.getElementById(`${materia}-1`).value) || 0;
             const nota2 = parseFloat(document.getElementById(`${materia}-2`).value) || 0;
-
-            const notaMinima = (7 - 0.3 * (nota1 + nota2)) / 0.4;
+            const notaMinima = calcularNotaMinima(nota1, nota2);
 
             if (nota1 || nota2) {
-                resultado += `${materia}: Nota mínima para passar: ${notaMinima.toFixed(2)}<br>`;
+                tabela += `<tr>
+                              <td>${materia}</td>
+                              <td>${nota1.toFixed(2)}</td>
+                              <td>${nota2.toFixed(2)}</td>
+                              <td class="${notaMinima > 10 ? 'nota-alta' : ''}">${notaMinima.toFixed(2)}</td>
+                          </tr>`;
             }
         });
+
+        tabela += '</tbody></table>';
+        return tabela;
+    };
+
+    // Disciplinas regulares
+    resultadoHTML += criarTabela(materiasRegulares, 'Disciplinas Regulares');
+
+    // Itinerários (se houver)
+    const itinerarioSelecionado = document.getElementById('itinerario').value;
+    if (itinerarioSelecionado && itinerarios[itinerarioSelecionado]) {
+        resultadoHTML += criarTabela(itinerarios[itinerarioSelecionado], 'Itinerário');
     }
 
-    document.getElementById('resultado').innerHTML = resultado || 'Por favor, insira as notas.';
+    // Exibe resultado
+    const resultadoContainer = document.getElementById('resultado');
+    const resultadoTitulo = document.getElementById('resultado-titulo');
+
+    if (resultadoHTML) {
+        resultadoContainer.innerHTML = resultadoHTML;
+        resultadoContainer.style.display = 'block';
+        resultadoTitulo.style.display = 'block';
+    } else {
+        resultadoContainer.innerHTML = 'Por favor, insira as notas.';
+        resultadoContainer.style.display = 'block';
+        resultadoTitulo.style.display = 'block';
+    }
 }
+
+
 
 function salvarNotas() {
     const notas = {};
