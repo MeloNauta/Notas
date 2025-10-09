@@ -97,7 +97,7 @@ function calcularNotas() {
     resultado += criarTabela(itinerario, 'Itinerário');
 
     if (!resultado) {
-        resultado = '<p>Por favor, insira as notas.</p>';
+        resultado = '<p style="color: red; font-weight: bold;">Por favor, insira as notas.</p>';
     }
 
     resultadoContainer.innerHTML = resultado;

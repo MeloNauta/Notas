@@ -64,16 +64,8 @@ function calcularNotas() {
     };
 
     const criarTabela = (materias, titulo) => {
-        let tabela = `<h3>${titulo}</h3><table>
-                        <thead>
-                            <tr>
-                                <th>Matéria</th>
-                                <th>Nota 1</th>
-                                <th>Nota 2</th>
-                                <th>Nota Mínima</th>
-                            </tr>
-                        </thead>
-                        <tbody>`;
+        let tabela = '';
+        let algumaNota = false;
 
         materias.forEach(materia => {
             const nota1 = parseFloat(document.getElementById(`${materia}-1`).value) || 0;
@@ -81,6 +73,22 @@ function calcularNotas() {
             const notaMinima = calcularNotaMinima(nota1, nota2);
 
             if (nota1 || nota2) {
+                if (!algumaNota) {
+                    // Cabeçalho só é criado se houver alguma nota
+                    tabela += `<h3>${titulo}</h3>
+                               <table>
+                                 <thead>
+                                   <tr>
+                                     <th>Matéria</th>
+                                     <th>Nota 1</th>
+                                     <th>Nota 2</th>
+                                     <th>Nota Mínima</th>
+                                   </tr>
+                                 </thead>
+                                 <tbody>`;
+                    algumaNota = true;
+                }
+
                 tabela += `<tr>
                               <td>${materia}</td>
                               <td>${nota1.toFixed(2)}</td>
@@ -90,15 +98,19 @@ function calcularNotas() {
             }
         });
 
-        tabela += '</tbody></table>';
-        return tabela;
+        if (algumaNota) {
+            tabela += '</tbody></table>';
+            return tabela;
+        } else {
+            return ''; // Retorna vazio se nenhuma nota
+        }
     };
 
     // Disciplinas regulares
     resultadoHTML += criarTabela(materiasRegulares, 'Disciplinas Regulares');
 
     // Itinerários (se houver)
-    const itinerarioSelecionado = document.getElementById('itinerario').value;
+    const itinerarioSelecionado = document.getElementById('itinerario')?.value;
     if (itinerarioSelecionado && itinerarios[itinerarioSelecionado]) {
         resultadoHTML += criarTabela(itinerarios[itinerarioSelecionado], 'Itinerário');
     }
@@ -107,15 +119,14 @@ function calcularNotas() {
     const resultadoContainer = document.getElementById('resultado');
     const resultadoTitulo = document.getElementById('resultado-titulo');
 
-    if (resultadoHTML) {
-        resultadoContainer.innerHTML = resultadoHTML;
-        resultadoContainer.style.display = 'block';
-        resultadoTitulo.style.display = 'block';
+    if (!resultadoHTML) {
+        resultadoContainer.innerHTML = '<p style="color: red; font-weight: bold;">Por favor, insira as notas.</p>';
     } else {
-        resultadoContainer.innerHTML = 'Por favor, insira as notas.';
-        resultadoContainer.style.display = 'block';
-        resultadoTitulo.style.display = 'block';
+        resultadoContainer.innerHTML = resultadoHTML;
     }
+
+    resultadoContainer.style.display = 'block';
+    resultadoTitulo.style.display = 'block';
 }
 
 function salvarNotas() {
