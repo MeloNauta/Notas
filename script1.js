@@ -56,6 +56,7 @@ function calcularNotas() {
     };
 
     // Função auxiliar para criar tabela
+    let temResultados = false; // movida para escopo de calcularNotas
     const criarTabela = (materias, titulo) => {
         let tabela = `<h3>${titulo}</h3>
                       <table>
@@ -88,6 +89,7 @@ function calcularNotas() {
         });
 
         tabela += '</tbody></table>';
+        if (algumaNota) temResultados = true;
         return algumaNota ? tabela : '';
     };
 
@@ -101,9 +103,40 @@ function calcularNotas() {
     }
 
     resultadoContainer.innerHTML = resultado;
+    const botaoBaixar = document.getElementById('botao-baixar');
+    if (temResultados) {
+        botaoBaixar.style.display = 'inline-block';
+    } else {
+        botaoBaixar.style.display = 'none';
+    }
 }
 
+function baixarResultado() {
+    const container = document.getElementById('resultado');
 
+    // Criar clone do container
+    const clone = container.cloneNode(true);
+
+    // Estilizar o clone para caber todo o conteúdo
+    clone.style.height = 'auto';
+    clone.style.overflow = 'visible';
+    clone.style.position = 'absolute';
+    clone.style.left = '-9999px'; // tira da tela
+    clone.style.top = '0';
+
+    document.body.appendChild(clone);
+
+    // Captura o clone
+    html2canvas(clone).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'nota_minima_3tri.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        // Remove o clone depois
+        document.body.removeChild(clone);
+    });
+}
 
 function salvarNotas() {
     const notas = {};

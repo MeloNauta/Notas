@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora para Descobrir Nota Mínima para o 3º Trimestre No Cetec</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -40,6 +41,9 @@
 
         <h1 id="resultado-titulo" style="text-align:center; margin-top:20px; display:none;">Resultados:</h1>
         <div id="resultado"></div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 15px;">
+           <button id="botao-baixar" onclick="baixarResultado()" style="display:none; float: right;">Baixar Resultados</button>
+        </div>
     </div>
 
     <div class="watermark">by Cauã Melo K3 2025</div>

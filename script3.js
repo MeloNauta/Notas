@@ -127,6 +127,38 @@ function calcularNotas() {
 
     resultadoContainer.style.display = 'block';
     resultadoTitulo.style.display = 'block';
+    const botaoBaixar = document.getElementById('botao-baixar');
+    if (resultadoHTML.trim()) {
+        botaoBaixar.style.display = 'inline-block';
+    } else {
+        botaoBaixar.style.display = 'none';
+    }
+}
+function baixarResultado() {
+    const container = document.getElementById('resultado');
+
+    // Criar clone do container
+    const clone = container.cloneNode(true);
+
+    // Estilizar o clone para caber todo o conteúdo
+    clone.style.height = 'auto';
+    clone.style.overflow = 'visible';
+    clone.style.position = 'absolute';
+    clone.style.left = '-9999px'; // tira da tela
+    clone.style.top = '0';
+
+    document.body.appendChild(clone);
+
+    // Captura o clone
+    html2canvas(clone).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'nota_minima_3tri.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        // Remove o clone depois
+        document.body.removeChild(clone);
+    });
 }
 
 function salvarNotas() {
